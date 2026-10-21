@@ -31,7 +31,6 @@ if (isset($_SERVER["HTTP_CF_IPCOUNTRY"]) && $_SERVER["HTTP_CF_IPCOUNTRY"] === 'U
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_TIMEOUT, 2); // Timeout de 2s para não travar o site
         $resposta = curl_exec($ch);
-        curl_close($ch);
         
         if ($resposta) {
             $dados = json_decode($resposta, true);
